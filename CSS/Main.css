@@ -3,12 +3,21 @@
       }
 
       h1,
-      h2, h3 {
+      h2,
+      h3 {
           color: rgb(26, 120, 188)
       }
 
+      h1 a,
+      h2 a,
+      h3 a {
+          color: rgb(26, 120, 188);
+          font-weight: bold;
+          /* background-color:rgb(26, 120, 188);
+          padding: 10px; */
+      }
       .general {
-          background-color: #eefcce;
+          background-color: #4d5bf1;
           padding: 1px 0px;
       }
 
@@ -17,13 +26,18 @@
           padding-top: 1em;
       }
 
+      .bg-img {
+          background-image: url('../resources/grass.jpg');
+          opacity: 0.5;
+
+      }
+
       body {
           background-color: #eefcce;
-          background-image: url('grass.jpg');
           background-repeat: repeat;
           margin: 0px auto;
           background-attachment: fixed !important;
-          max-width: 1600px;
+          /* max-width: 1600px; */
           min-width: 360px;
       }
 
@@ -89,7 +103,7 @@
           color: #abf1f8 !important;
           font-size: 1.5em;
           text-shadow: 2px 2px 3px rgb(0, 0, 0);
-    }
+      }
 
       .bg10 a:hover {
           color: rgb(255, 255, 255) !important;
