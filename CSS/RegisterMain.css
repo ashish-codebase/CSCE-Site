@@ -1,0 +1,8 @@
+.reg-width{
+    width: 100% !important;
+    min-width: 200px;
+}
+.Feedback {
+    padding: 20px;
+    background-color: #bdca99;
+}

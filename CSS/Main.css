@@ -1,0 +1,184 @@
+      html {
+          font-family: sans-serif;
+      }
+
+      h1,
+      h2, h3 {
+          color: rgb(26, 120, 188)
+      }
+
+      .general {
+          background-color: #eefcce;
+          padding: 1px 0px;
+      }
+
+      .p-space {
+
+          padding-top: 1em;
+      }
+
+      body {
+          background-color: #eefcce;
+          background-image: url('grass.jpg');
+          background-repeat: repeat;
+          margin: 0px auto;
+          background-attachment: fixed !important;
+          max-width: 1600px;
+          min-width: 360px;
+      }
+
+      .headertxt {
+          background: rgb(230, 150, 20);
+          padding: 15px;
+          font-variant-caps: petite-caps;
+      }
+
+      #currenturl {
+          padding: 20px;
+          /* background: #9f8cd0; */
+          border-width: 2px;
+          border-radius: 16px;
+          border-style: solid;
+          text-align: center;
+          margin: 10px 0px;
+      }
+
+      .text-div {
+          padding: 20px;
+          background: rgb(214, 215, 214);
+          margin: 10px 10px 10px 10px;
+          border-radius: 10px;
+      }
+
+      .bg60-1 {
+          background-color: #eefcce;
+      }
+
+      .bg60-1 a {
+          color: #363d26;
+      }
+
+      .bg60-2 {
+          background-color: #d4e0b8;
+      }
+
+      .bg60-2 a {
+          color: #363d26;
+      }
+
+      .bg60-3 {
+          background-color: #9ca783;
+      }
+
+      .bg60-3 a {
+          color: #363d26;
+      }
+
+      .bg30 {
+          background-color: #3c91e6;
+          color: white !important;
+
+      }
+
+      .bg10 {
+          background-color: #c05746;
+          color: rgb(205, 169, 228) !important;
+      }
+
+      .bg10 a {
+          color: #abf1f8 !important;
+          font-size: 1.5em;
+          text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    }
+
+      .bg10 a:hover {
+          color: rgb(255, 255, 255) !important;
+          font-size: 1.5em;
+      }
+
+      .bg-txt-light {
+          background-color: #484349 !important;
+          color: white !important;
+      }
+
+      .bg-txt-light a {
+          /* background-color: #484349 !important; */
+          color: white !important;
+      }
+
+      .bg-txt-dark {
+          color: #484349 !important;
+          background-color: white !important;
+
+      }
+
+      .center {
+          text-align: center;
+      }
+
+      .strong-txt {
+          font-weight: bold;
+      }
+
+      h1 {
+          text-align: center;
+          color: rgb(57, 69, 228);
+          margin: 0;
+      }
+
+      article {
+          padding-left: 10px;
+          padding-right: 2px;
+          padding-bottom: 10px;
+          min-width: 200px;
+          margin: 10px 0px 0px 10px;
+          background: #dbe7bf;
+          border-radius: 4px;
+          border-width: 5px;
+          border-style: solid;
+          border: medium;
+          border-color: black;
+      }
+
+      .flexContainer {
+          display: flex;
+          flex-direction: row;
+          background-color: #eefcce;
+          padding-bottom: 10px;
+          padding-right: 10px;
+      }
+
+      .flexContainer div {
+          flex: 1;
+          display: flex;
+          background-color: #eefcce;
+          padding-bottom: 10px;
+          padding-right: 10px;
+          margin: 20px;
+      }
+
+      @media (max-width: 960px) {
+          .flexContainer {
+              flex-direction: column;
+          }
+      }
+
+      .flexItem {
+          margin: 10px;
+          padding: 10px;
+          flex: 25%;
+      }
+
+      #customH2 {
+          font-size: 1.25rem;
+          color: rgb(121, 10, 66);
+          text-align: center;
+          text-decoration: underline;
+      }
+
+      img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 95%;
+      }
