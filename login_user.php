@@ -37,13 +37,13 @@ $result = mysqli_query($conn, $query_txt);
 // Check if email address already exists in database
 if (mysqli_num_rows($result) > 0) {
     $_SESSION['logged_in'] = 'true';
-    $_SESSION['NewUserSuccess']="";
+    // $_SESSION['NewUserSuccess']="";
     echo "User Logged in";
     header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
 } 
 else {
     $_SESSION['logged_in'] = 'false';
-    $_SESSION['NewUserSuccess']="New User updated!";
+    
     header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
 }
 exit();

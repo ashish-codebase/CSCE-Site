@@ -52,7 +52,7 @@ session_status() === PHP_SESSION_ACTIVE ?: session_start();
 
                     </div>
                     <br>
-                    <input class="btn-lg btn btn-info" type="submit" />
+                    <input class="btn-lg btn btn-info" type="submit" value="Register" />
                 </form>
                 <?php
                 echo $_SESSION['NewUserSuccess'];
