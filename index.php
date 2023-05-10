@@ -1,11 +1,19 @@
 <?php
-// @session_start();
-if(!isset($_SESSION))
+@session_start();
+
+if(is_null($_SESSION['NewUserSuccess']))
 {
-    @session_start();
     $_SESSION['NewUserSuccess']="";
-    $_SESSION['logged_in']='false';
 }
+if(is_null($_SESSION['logged_in']))
+    {
+    $_SESSION['logged_in']='false';
+    }    
+    if(is_null($_SESSION['current_user_mail']))
+    {
+    $_SESSION['current_user_mail']='';
+    }  
+
 
 // Change defaults using the passed parameters.
 if (empty($_GET)) {

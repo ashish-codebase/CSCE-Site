@@ -1,13 +1,10 @@
 <?php
 // Start a new session
-// @session_start();
-// session_status() === PHP_SESSION_ACTIVE ?: session_start();
-// if(session_status() === PHP_SESSION_NONE){
-// session_start();
-// echo "Starting Session from login";
-// }   
-// $_SESSION['logged_in'] = 'false';
+@session_start();
+ 
+$_SESSION['logged_in'] = 'false';
 // $_SESSION['NewUserSuccess']="";
+$_SESSION['current_user_mail']='';
 
 // User Login credentials
 $Email = $_POST['Email'];
@@ -38,11 +35,12 @@ $result = mysqli_query($conn, $query_txt);
 // Check if email address already exists in database
 if (mysqli_num_rows($result) > 0) {
     $_SESSION['logged_in'] = 'true';
+    $_SESSION['current_user_mail']=$Email;
     // $_SESSION['NewUserSuccess']="";
     echo "User Logged in";
     header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
     $conn->close();
-    // die();
+    die();
 } 
 else {
     $_SESSION['logged_in'] = 'false';

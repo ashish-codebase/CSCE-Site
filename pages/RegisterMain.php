@@ -74,7 +74,7 @@
                 ?>
                 <br>
             </div>
-            <div class="login-box col bg60-2 m-3 p-3">
+            <div class="login-box col-md bg60-2 m-3 p-3">
                 <h2>Login</h2>
                 <form method="post" action="login_user.php">
                     <div class="container">
@@ -88,16 +88,19 @@
                         </div>
                     </div>
                     <br>
-                    <input class="btn-lg btn btn-info" type="submit" value="Login">
+                    <input class="btn-lg btn btn-info m-2" type="submit" value="Login">
+                    <input class="btn-lg btn btn-info m-2" type="submit" value="Logout">
+
                 </form>
             </div>
-        </div>
-        <?php
+            <?php
         if ($_SESSION['logged_in']=='true')
         {
          include "./pages/user_table.php";
         }
           ?>
+        </div>
+
     </div>
 </main>
 </div>

@@ -1,13 +1,8 @@
 <?php
-// @session_start();
-// echo "register working";
-// Start a new session
-// if(session_status() === PHP_SESSION_NONE) 
-// session_status() === PHP_SESSION_ACTIVE ?: session_start();
-// if (!isset($_SESSION['NewUserSuccess'])){
-//     $_SESSION['logged_in'] = 'false';
-//     $_SESSION['NewUserSuccess'] = '';
-// }
+@session_start();
+$_SESSION['logged_in'] = 'false';
+$_SESSION['NewUserSuccess']="";
+$_SESSION['current_user_mail']='';
 
 // User Login credentials
 $Email = $_POST['Email'];
@@ -46,8 +41,7 @@ if (mysqli_num_rows($result) > 0) {
     header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
     exit();
 } else {
-    $_SESSION['NewUserSuccess']="New User updated!";
-
+    
     $sql = "INSERT INTO users (Email , FName, LName, Phone, Password)
         VALUES (
         '$_POST[Email]',
@@ -57,19 +51,15 @@ if (mysqli_num_rows($result) > 0) {
         '$_POST[Password]'
         )";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+    $_SESSION['NewUserSuccess']="New User updated!";
+    $_SESSION['logged_in'] = 'true';
+    $_SESSION['current_user_mail']=$Email;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-
     header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
     exit();
-
-    // echo "Email address does not exist";
 }
-
     $conn->close();
-// }
-?>
