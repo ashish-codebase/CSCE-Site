@@ -1,9 +1,9 @@
 <?php
 // session_status() === PHP_SESSION_ACTIVE ?: session_start();
-@session_start();
-if($_SESSION['logged_in'] == 'false'){
-    exit();
-}
+// @session_start();
+// if($_SESSION['logged_in'] == 'false'){
+//     exit();
+// }
 
 // SQL Login and server details:
 $servername = "localhost";

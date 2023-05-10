@@ -1,6 +1,21 @@
 <?php
 
-session_status() === PHP_SESSION_ACTIVE ?: session_start();
+// session_status() === PHP_SESSION_ACTIVE ?: session_start();
+// @session_start();
+// if(session_status() !== PHP_SESSION_ACTIVE)
+// {
+//     @session_start();
+//     $_SESSION['NewUserSuccess']="";
+//     $_SESSION['logged_in']='false';
+// }
+
+// if(session_status() !== PHP_SESSION_NONE) 
+// {
+//     @session_start();
+//     $_SESSION['NewUserSuccess']="";
+//     $_SESSION['logged_in']='false';
+// }
+
     // echo "Starting Session form register main";
     // $_SESSION['NewUserSuccess']="";
     // $_SESSION['logged_in']='false';
