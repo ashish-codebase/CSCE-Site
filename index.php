@@ -1,4 +1,9 @@
 <?php
+// if(session_status() === PHP_SESSION_NONE){
+//     session_start();
+//     echo "Starting Session from index";
+//     }
+// $_SESSION['logged_in'] = 'false';
 // Set default page_path and page_css values.
 $page_path = './pages/Main.html';
 $page_css = './pages/Main.css';

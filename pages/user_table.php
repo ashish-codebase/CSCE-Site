@@ -1,20 +1,23 @@
 <style>
-    table,
-    th,
-    td {
+    .user table,
+    .user th,
+    .user td {
         border: 2px solid black;
     }
 
-    tr {
+    .user tr {
         margin: 5px;
     }
 </style>
 <?php
-echo "running table read";
+// echo "running table read";
 include('read_db.php');
 
 ?>
-<table>
+<hr>
+<br>
+<h2>All User's list (visible only if user is logged-in).</h2>
+<table class="user">
     <thead>
         <tr>
             <th>Email</th>
@@ -26,13 +29,13 @@ include('read_db.php');
     <tbody>
         <?php
         foreach ($result as $row) {
-            $email = $row['email'];
+            $Email = $row['Email'];
             $FName = $row['FName'];
             $LName = $row['LName'];
             $Phone = $row['Phone'];
 
             echo "<tr>";
-            echo "<td>" . $email . "</td>";
+            echo "<td>" . $Email . "</td>";
             echo "<td>" . $FName . "</td>";
             echo "<td>" . $LName . "</td>";
             echo "<td>" . $Phone . "</td>";

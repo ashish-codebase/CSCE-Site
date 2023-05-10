@@ -1,22 +1,97 @@
-<div class="StationflexContainer">
-    <?php
-    include 'chart-style.php';
-    include 'site-list.html';
-    ?>
-</div>
-<div class="container-fluid bg60-1 p-3 m-0">
+<h1>Sutherland Weather Station Data</h1>
+<div class="container">
     <div class="row">
-        <div class="col-lg-6">
-            <canvas class="chart" id="myChartBar"></canvas>
-            <p class="p-space">Daily maximum temperature from the reserach tower. In case the 
-                max. tempname is not available we get the data from the nearest 
-                HPRCC weather station.
-            </p>
-        </div>
-        <div class="col-lg-6">
-        <canvas class="chart" id="myChartLine"></canvas>
-        <p class="p-space">hello world first chart.</p>
+        <div class="col-lg">  <canvas id="vpdmaxChart"></canvas>
+</div>
+        <div class="col-lg">  <canvas id="tmaxChart"></canvas>
+</div>
     </div>
+    <div class="row">
+        <div class="col-lg">  <canvas id="tminChart"></canvas>
+</div>
+        <div class="col-lg">  <canvas id="gddChart"></canvas>
+</div>
+    </div>
+    <div class="row">
+        <div class="col-lg">  <canvas id="airPressureChart"></canvas>
+</div>
+
     </div>
 </div>
-<script src="./pages/chart-data.js"></script>
+
+  <script>
+    d3.csv("./Data/Sutherland_compiled.csv").then(function(data) {
+      const labels = data.map(d => d.DateTime);
+      const vpdmaxData = data.map(d => d.VPDmax);
+      const tmaxData = data.map(d => d.Tmax_F);
+      const tminData = data.map(d => d.Tmin_F);
+      const gddData = data.map(d => d.GDD_cum);
+      const ETc_Sum = data.map(d => d.ETc_mm);
+
+      const vpdmaxChart = new Chart(document.getElementById("vpdmaxChart"), {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{ 
+            data: vpdmaxData,
+            label: "VPD max (Pa)",
+            borderColor: "#3e95cd",
+            fill: false
+          }]
+        }
+      });
+
+      const tmaxChart = new Chart(document.getElementById("tmaxChart"), {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{ 
+            data: tmaxData,
+            label: "Max Temperature (F)",
+            borderColor: "#8e5ea2",
+            fill: false
+          }]
+        }
+      });
+
+      const tminChart = new Chart(document.getElementById("tminChart"), {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{ 
+            data: tminData,
+            label: "Min Temperature (F)",
+            borderColor: "#3cba9f",
+            fill: false
+          }]
+        }
+      });
+
+      const gddChart = new Chart(document.getElementById("gddChart"), {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{ 
+            data: gddData,
+            label: "Cumulative GDD (F)",
+            borderColor: "#e8c3b9",
+            fill: false
+          }]
+        }
+      });
+
+      const airPressureChart = new Chart(document.getElementById("airPressureChart"), {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{ 
+            data: ETc_Sum,
+            label: "Evapotranspiration (mm)",
+            borderColor: "#c45850",
+            fill: false
+          }]
+        }
+      });
+    });
+  </script>
+</div>
