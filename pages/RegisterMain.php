@@ -1,5 +1,8 @@
+<?php
+        echo "calling user_table";
+?>
 <style>
-    .Feedback {
+    .Register {
         padding: 20px;
         background-color: #bdca99;
     }
@@ -7,19 +10,11 @@
     .td-1 {
         max-width: 200px;
     }
-
-    /* .feedback-div {
-        margin: 0 auto;
-        max-width: 800px;
-        background: wheat;
-    margin: 10px;
-    } */
-
 </style>
-<main class="Feedback">
+<main class="Register">
     <div class="container">
         <div class="row">
-            <div class="feedback-div col  bg60-2 m-2">
+            <div class="col  bg60-2 m-2">
                 <h2>Register</h2>
                 <p><strong>Login / Register to select your favourite station.</strong></p>
                 <form id="contactForm" onsubmit="feedbackFormValidate()">
@@ -35,6 +30,14 @@
                                 </select></td>
                         </tr>
                         <tr>
+                            <td class="td-1">E-mail Address:</td>
+                            <td><input class="reg-width" type="text" name="email"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-1">Password:</td>
+                            <td><input class="reg-width" type="password" name="email"></td>
+                        </tr>
+                        <tr>
                             <td class="td-1">First Name:</td>
                             <td><input class="reg-width" type="text" name="firstName"></td>
                         </tr>
@@ -43,25 +46,8 @@
                             <td><input class="reg-width" type="text" name="lastName"></td>
                         </tr>
                         <tr>
-                            <td class="td-1">E-mail Address:</td>
-                            <td><input class="reg-width" type="text" name="email"></td>
-                        </tr>
-                        <tr>
-                            <td class="td-1">Phone Number:</td>
+                            <td class="td-1">Phone Number123:</td>
                             <td><input class="reg-width" type="text" name="phone"></td>
-                        </tr>
-                        <tr>
-                            <td class="td-1">Subject:</td>
-                            <td><input class="reg-width" type="text" name="subject"></td>
-                        </tr>
-                        <tr>
-                            <td class="td-1">Comments:</td>
-                            <td><textarea class="reg-width" name="message" rows="6"></textarea></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Please check here if you wish to receive a reply:
-                                <input type="checkbox" name="reply" value="yes">
-                            </td>
                         </tr>
                         <tr>
                             <td><input class="btn-lg btn btn-info" type="submit" value="Submit"></td>
@@ -74,36 +60,34 @@
                 <!-- <h2><a href="./index.php?page_path=./pages/LoginMain.php&page_css=./CSS/LoginMain.css">Login</a></h2> -->
             </div>
             <div class="login-box col bg60-2 m-2">
-                
                 <h2 style="text-align: left; padding:20px 0;">Login</h2>
                 <form class="login-form" method="post" action="login.php">
-                    <div style="padding:10px 0;" >
+                    <div style="padding:10px 0;">
                         <label style="width:80px;" for="username">Username:</label>
                         <input type="text" id="username" name="username" required>
                     </div>
-                    <div style="padding:10px 0;" >
+                    <div style="padding:10px 0;">
                         <label style="width:80px;" for="password">Password:</label>
                         <input type="password" id="password" name="password" required>
                     </div>
-                    
                     <input class="btn-lg btn btn-info" type="submit" value="Login">
-                    <!-- <input class="btn-lg btn btn-danger" type="button" id="cancel" data-close value="Cancel" onclick="open('_self').close();"> -->
                 </form>
-                <!-- <a class="btn btn-primary btn-lg" href="./index.php?page_path=./pages/LoginMain.php&page_css=./CSS/LoginMain.css" id="login-button" role="button">Open Login Form</a> -->
             </div>
         </div>
-
+        <?php
+        echo "calling user_table";
+        include "./user_table.php";
+        ?>
     </div>
-
 
 </main>
 <script>
-    const updateButton = document.getElementById("login-button");
-    updateButton.addEventListener("click", () => {
-        console.log("button clicked");
-        // dialog.showModal();
-        // openCheck(dialog);
-    });
+    // const updateButton = document.getElementById("login-button");
+    // updateButton.addEventListener("click", () => {
+    //     console.log("button clicked");
+    //     // dialog.showModal();
+    //     // openCheck(dialog);
+    // });
 
     function feedbackFormValidate() {
         var contactFormObj = document.getElementById("contactForm");
