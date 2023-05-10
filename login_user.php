@@ -1,6 +1,7 @@
 <?php
 // Start a new session
-session_status() === PHP_SESSION_ACTIVE ?: session_start();
+@session_start();
+// session_status() === PHP_SESSION_ACTIVE ?: session_start();
 // if(session_status() === PHP_SESSION_NONE){
 // session_start();
 // echo "Starting Session from login";

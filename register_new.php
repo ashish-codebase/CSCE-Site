@@ -1,8 +1,9 @@
 <?php
-echo "register working";
+@session_start();
+// echo "register working";
 // Start a new session
 // if(session_status() === PHP_SESSION_NONE) 
-session_status() === PHP_SESSION_ACTIVE ?: session_start();
+// session_status() === PHP_SESSION_ACTIVE ?: session_start();
 if (!isset($_SESSION['NewUserSuccess'])){
     $_SESSION['logged_in'] = 'false';
     $_SESSION['NewUserSuccess'] = '';

@@ -1,9 +1,10 @@
 <?php
+    // @session_start();
     // session_status() === PHP_SESSION_ACTIVE ?: session_start();
     // echo "Starting Session from index";
     $_SESSION['NewUserSuccess']="";
     $_SESSION['logged_in'] = 'false';
-    print_r($_SESSION);
+    // print_r($_SESSION);
     // Set default page_path and page_css values.
     $page_path = './pages/Main.html';
     $page_css = './pages/Main.css';
