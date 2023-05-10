@@ -1,8 +1,10 @@
 <?php
-if(session_status() === PHP_SESSION_NONE){
-    session_start();
-    echo "Starting Session form register main";
-    }
+
+session_status() === PHP_SESSION_ACTIVE ?: session_start();
+    // echo "Starting Session form register main";
+    // $_SESSION['NewUserSuccess']="";
+    // $_SESSION['logged_in']='false';
+    // print_r($_SESSION);
     
 ?>
 <style>
@@ -21,7 +23,7 @@ if(session_status() === PHP_SESSION_NONE){
             <div class="col  bg60-2 m-3 p-3">
                 <h2>Register</h2>
                 <p><strong>Login / Register to select your favourite station.</strong></p>
-                <form action="register_new.php" method="post">
+                <form method="post" action="register_new.php" >
                     <div class="container">
                         <div class="row">
                             <label class="col-lg">Email Address:</label>
@@ -52,6 +54,9 @@ if(session_status() === PHP_SESSION_NONE){
                     <br>
                     <input class="btn-lg btn btn-info" type="submit" />
                 </form>
+                <?php
+                echo $_SESSION['NewUserSuccess'];
+                ?>
                 <br>
             </div>
             <div class="login-box col bg60-2 m-3 p-3">

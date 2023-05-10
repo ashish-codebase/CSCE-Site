@@ -1,12 +1,13 @@
 <?php
 // Start a new session
-if(session_status() === PHP_SESSION_NONE) session_start();
-// $_SESSION['logged_in'] = 'false';
+// if(session_status() === PHP_SESSION_NONE) 
+session_status() === PHP_SESSION_ACTIVE ?: session_start();
+// $_SESSION['NewUserSuccess'] = '';
 
 // User Login credentials
 $Email = $_POST['Email'];
 $Password = $_POST['Password'];
-
+echo $Email;
 // SQL Login and server details:
 $servername = "localhost";
 $username = "root";
