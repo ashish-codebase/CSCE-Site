@@ -18,7 +18,7 @@ if(is_null($_SESSION['logged_in']))
 // Change defaults using the passed parameters.
 if (empty($_GET)) {
     $page_path = './pages/Main.html';
-    $page_css = './pages/Main.css';
+    $page_css = './CSS/Main.css';
 }
 else{
     $page_path = htmlspecialchars($_GET['page_path']);

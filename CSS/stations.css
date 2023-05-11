@@ -1,21 +1,23 @@
-  .chart {
-    /* background-color: rgb(246, 212, 245); */
-    /* padding: 20px; */
+  .chart-d {
+    padding: 10px;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
     border-style: solid;
     border-width: 2px;
     border-color: black;
-    border-radius: 0px;
-    /* margin: 20px; */
+    border-radius: 20px;
+    background-color: rgb(223, 223, 223);
   }
-  #vpdmaxChart{
-        /* background-color: rgb(246, 212, 245); */
-    /* padding: 20px; */
+
+  .chart-l {
+    padding: 10px;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
     border-style: solid;
     border-width: 2px;
     border-color: black;
-    border-radius: 0px;
-    /* margin: 20px; */
+    border-radius: 20px;
+    background-color: rgb(241, 241, 241);
   }
+
   .chartarea {
     background-color: rgb(48, 46, 48);
     /* padding: 5px; */
