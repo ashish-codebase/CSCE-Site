@@ -1,3 +1,48 @@
+<style>
+    .slidecontainer {
+        width: 100%;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 25px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+</style>
+
+<h1>Date Range Selector</h1>
+<h3 class="px-3">Drag the slider to display the data.</h3>
+
+<div class="slidecontainer">
+    <input type="range" min="-366" max="-7" value="-14" class="slider" id="myRange">
+    <p class="px-3"><strong>Days to display: <span id="demo"></span></strong> </p>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-lg m-2 p-2 chart-d"> <canvas id="vpdmaxChart"></canvas>
@@ -17,3 +62,12 @@
 
     </div>
 </div>
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value*-1;
+
+    slider.oninput = function () {
+        output.innerHTML = this.value*-1;
+    }
+</script>
