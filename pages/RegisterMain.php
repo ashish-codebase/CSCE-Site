@@ -14,7 +14,7 @@
 <main class="Register">
     <div class="container">
         <div class="row">
-            <div class="col  bg60-2 m-3 p-3">
+            <div class="col bg60-2 m-3 p-3">
                 <h2>Register</h2>
                 <p><strong>Login / Register to select your favourite station.</strong></p>
                 <form method="post" action="register_new.php" >
@@ -53,7 +53,7 @@
                 ?>
                 <br>
             </div>
-            <div class="login-box col-md bg60-2 m-3 p-3">
+            <div class="col bg60-2 m-3 p-3">
                 <h2>Login</h2>
                 <form method="post" action="login_user.php">
                     <div class="container">

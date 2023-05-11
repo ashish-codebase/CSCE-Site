@@ -1,0 +1,48 @@
+.lowerp {
+    background-color: aqua;
+}
+
+.imgcol {
+    float:left;
+    max-height: 100px; 
+    /* margin:10px; */
+}
+
+.imgcol img {
+    /* display:block; */
+    /* width:100%; */
+    height:100px
+}
+.paracol {
+    width: 70%;
+    display: inline-block;
+    padding: 10px;
+}
+
+.twocol {
+    display: inline-flex;
+    margin-top: 20px;
+}
+
+.teamh1 {
+    padding: 20px;
+    background-color: wheat;
+    color: rgb(68, 7, 77);
+}
+
+.mtop {
+    margin-top: 2em;
+}
+
+.TLabel {
+    background-color: #e67e22;
+    /* margin: 10px; */
+    text-align: center;
+    /* vertical-align:middle !important; */
+    padding: 20px;
+    display: block;
+    margin: auto 0;
+}
+.photo{
+    min-width: 150px;
+}

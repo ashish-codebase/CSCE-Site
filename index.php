@@ -1,15 +1,15 @@
 <?php
 @session_start();
 
-if(is_null($_SESSION['NewUserSuccess']))
+if(!isset($isset['NewUserSuccess']))
 {
     $_SESSION['NewUserSuccess']="";
 }
-if(is_null($_SESSION['logged_in']))
+if(!isset($_SESSION['logged_in']))
     {
     $_SESSION['logged_in']='false';
     }    
-    if(is_null($_SESSION['current_user_mail']))
+    if(!isset($_SESSION['current_user_mail']))
     {
     $_SESSION['current_user_mail']='';
     }  
