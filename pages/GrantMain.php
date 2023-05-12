@@ -5,7 +5,12 @@
     </div>
 </div>
 <?php include './pages/site-list.html'?>
-<?php include './pages/chart-template.html'?>
-<script src="./pages/chart-common.js" data-args="./Data/Grant_compiled.csv"></script>
+<!-- <?php include './pages/chart-template.html'?> -->
+<?php
+$_POST["CSV_path"]="./Data/Grant_compiled.csv";
+ include './pages/charts.php';
+ ?>
+
+<!-- <script src="./pages/chart-common.js" data-args="./Data/Grant_compiled.csv"></script> -->
 
 </div>
