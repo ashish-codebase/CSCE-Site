@@ -3,18 +3,24 @@
 ?>
 <style>
     .Register {
-        padding: 20px;
+        /* padding: 20px; */
         background-color: #bdca99;
-    }
+        }
 
     .td-1 {
         width: 500px;
+    }
+    .col, .col-lg{
+        /* border-style: solid; */
+
+        border-width: 1px;
+
     }
 </style>
 <main class="Register">
     <div class="container">
         <div class="row">
-            <div class="col bg60-2 m-3 p-3">
+            <div class="col-lg me-3 mt-3 mb-3 bg60-1 p-3">
                 <h2>Register</h2>
                 <p><strong>Login / Register to select your favourite station.</strong></p>
                 <form method="post" action="register_new.php" >
@@ -53,7 +59,7 @@
                 ?>
                 <br>
             </div>
-            <div class="col bg60-2 m-3 p-3">
+            <div class="col-lg mt-3 mb-3 me-3 bg60-1 p-3">
                 <h2>Login</h2>
                 <form method="post" action="login_user.php">
                     <div class="container">

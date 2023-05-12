@@ -82,10 +82,12 @@
 
       .bg60-3 {
           background-color: #9ca783;
+          padding: 20px;
       }
 
       .bg60-3 a {
           color: #363d26;
+          padding: 20px;
       }
 
       .bg30 {
@@ -97,6 +99,7 @@
       .bg10 {
           background-color: #c05746;
           color: rgb(205, 169, 228) !important;
+
       }
 
       .bg10 a {
@@ -108,16 +111,6 @@
       .bg10 a:hover {
           color: rgb(255, 255, 255) !important;
           font-size: 1.5em;
-      }
-
-      .bg-txt-light {
-          background-color: #484349 !important;
-          color: white !important;
-      }
-
-      .bg-txt-light a {
-          /* background-color: #484349 !important; */
-          color: white !important;
       }
 
       .bg-txt-dark {
