@@ -149,12 +149,14 @@ d3.csv(args).then(function (data) {
         range: {
             min: new Date(dateRange[0]).getTime(),
             max: new Date(dateRange[1]).getTime()
+            // min: sliderBegin,
+            // max: sliderEnd
         },
         step: 24 * 60 * 60 * 1000, // One day in milliseconds
         // tooltips: [true, true],
         connect: true,
         behaviour: 'drag',
-        start: [new Date(dateRange[0]).getTime(), new Date(dateRange[1]).getTime()]
+        start: [new Date(dateRange[1]).getTime()-(21*86400000), new Date(dateRange[1]).getTime()]
     });
 
     // Update the charts when the slider range changes
