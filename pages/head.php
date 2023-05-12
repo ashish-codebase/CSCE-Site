@@ -21,6 +21,9 @@
     <script src="./jquery.js"></script>
     <script src="./resources/chart.js"></script>
     <script src="./resources/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Daily EC data from towers.</title>

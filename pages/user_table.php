@@ -43,11 +43,23 @@ include('read_db.php');
         </thead>
         <tbody>
             <?php
+            function stripString($inpString){
+                return substr($inpString, 0, 3)."*******";
+            }
             foreach ($result as $row) {
-                $Email = $row['Email'];
-                $FName = $row['FName'];
-                $LName = $row['LName'];
-                $Phone = $row['Phone'];
+                if ($row['Email']!=$_SESSION['current_user_mail']){
+                    $Email = stripString($row['Email']);
+                    $FName = stripString($row['FName']);
+                    $LName = stripString($row['LName']);
+                    $Phone = stripString($row['Phone']);
+                }
+                else{
+                    $Email = $row['Email'];
+                    $FName = $row['FName'];
+                    $LName = $row['LName'];
+                    $Phone = $row['Phone'];
+                }
+
 
                 echo "<tr>";
                 echo "<td>" . $Email . "</td>";

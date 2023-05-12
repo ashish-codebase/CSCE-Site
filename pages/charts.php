@@ -14,11 +14,14 @@
             <div class="col-lg"> <canvas id="airPressureChart"></canvas>
             </div>
         </div>
+        <div id="csv_path"><?php echo $_POST["CSV_path"]; ?></div>
+
     </div>
 
     <script>
-        var csv = <?php echo $_POST["CSV_path"]; ?>  
-        d3.csv(csv).then(function(data) {
+        var csv_path = document.getElementById("csv_path");
+        console.log(csv_path);
+        d3.csv(csv_path).then(function(data) {
             const parseDate = d3.timeParse("%Y-%m-%d");
             // var lable_formatted = [];
             // Convert date strings to JavaScript Date objects
@@ -38,7 +41,7 @@
             const tmaxData = data.map(d => d.Tmax_F);
             const tminData = data.map(d => d.Tmin_F);
             const gddData = data.map(d => d.GDD_cum);
-            const airPressureData = data.map(d => d.ETc_mm);
+            const ETc_mmData = data.map(d => d.ETc_mm);
 
             const vpdmaxChart = new Chart(document.getElementById("vpdmaxChart"), {
                 type: 'line',
@@ -92,13 +95,13 @@
                 }
             });
 
-            const airPressureChart = new Chart(document.getElementById("airPressureChart"), {
+            const ETc_mmChart = new Chart(document.getElementById("ETc_mmChart"), {
                 type: 'line',
                 data: {
                     labels: labels,
                     datasets: [{
                         data: airPressureData,
-                        label: "Air Pressure",
+                        label: "ETc (mm)",
                         borderColor: "#c45850",
                         fill: false
                     }]
@@ -155,9 +158,9 @@
                 gddChart.data.datasets[0].data = filteredGDD_cumData;
                 gddChart.update();
 
-                airPressureChart.data.labels = filteredLabels;
-                airPressureChart.data.datasets[0].data = filteredETc_mmData;
-                airPressureChart.update();
+                ETc_mmChart.data.labels = filteredLabels;
+                ETc_mmChart.data.datasets[0].data = filteredETc_mmData;
+                ETc_mmChart.update();
             });
         });
     </script>

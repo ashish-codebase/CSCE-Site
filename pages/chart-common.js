@@ -1,78 +1,3 @@
-// const args = document.currentScript.dataset.args;
-// const csvName = args.split(",")[0];
-// d3.csv(csvName).then(function (data) {
-//     const labels = data.map(d => d.DateTime);
-//     const vpdmaxData = data.map(d => d.VPDmax);
-//     const tmaxData = data.map(d => d.Tmax_F);
-//     const tminData = data.map(d => d.Tmin_F);
-//     const gddData = data.map(d => d.GDD_cum);
-//     const ETc_Sum = data.map(d => d.ETc_mm);
-
-//     const vpdmaxChart = new Chart(document.getElementById("vpdmaxChart"), {
-//         type: 'line',
-//         data: {
-//             labels: labels,
-//             datasets: [{
-//                 data: vpdmaxData,
-//                 label: "VPD max (Pa)",
-//                 borderColor: "#3e95cd",
-//                 fill: false
-//             }]
-//         }
-//     });
-
-//     const tmaxChart = new Chart(document.getElementById("tmaxChart"), {
-//         type: 'line',
-//         data: {
-//             labels: labels,
-//             datasets: [{
-//                 data: tmaxData,
-//                 label: "Max Temperature (F)",
-//                 borderColor: "#8e5ea2",
-//                 fill: false
-//             }]
-//         }
-//     });
-
-//     const tminChart = new Chart(document.getElementById("tminChart"), {
-//         type: 'line',
-//         data: {
-//             labels: labels,
-//             datasets: [{
-//                 data: tminData,
-//                 label: "Min Temperature (F)",
-//                 borderColor: "#3cba9f",
-//                 fill: false
-//             }]
-//         }
-//     });
-
-//     const gddChart = new Chart(document.getElementById("gddChart"), {
-//         type: 'line',
-//         data: {
-//             labels: labels,
-//             datasets: [{
-//                 data: gddData,
-//                 label: "Cumulative GDD (F)",
-//                 borderColor: "#e8c3b9",
-//                 fill: false
-//             }]
-//         }
-//     });
-
-//     const airPressureChart = new Chart(document.getElementById("airPressureChart"), {
-//         type: 'line',
-//         data: {
-//             labels: labels,
-//             datasets: [{
-//                 data: ETc_Sum,
-//                 label: "Evapotranspiration (mm)",
-//                 borderColor: "#c45850",
-//                 fill: false
-//             }]
-//         }
-//     });
-// });
 const args = document.currentScript.dataset.args;
 d3.csv(args).then(function (data) {
     const parseDate = d3.timeParse("%Y-%m-%d");
@@ -94,7 +19,7 @@ d3.csv(args).then(function (data) {
     const tmaxData = data.map(d => d.Tmax_F);
     const tminData = data.map(d => d.Tmin_F);
     const gddData = data.map(d => d.GDD_cum);
-    const airPressureData = data.map(d => d.ETc_mm);
+    const ETc_mmData = data.map(d => d.ETc_mm);
 
     const vpdmaxChart = new Chart(document.getElementById("vpdmaxChart"), {
         type: 'line',
@@ -107,6 +32,17 @@ d3.csv(args).then(function (data) {
                 fill: false
             }]
         },
+        options : {
+            scales: {
+                y: {
+                    title: {
+                      display: true,
+                      text: 'Max. Vapor Pressure Deficit (Pa)'
+                    }
+                  },
+
+            }
+          },
     });
 
     const tmaxChart = new Chart(document.getElementById("tmaxChart"), {
@@ -119,8 +55,20 @@ d3.csv(args).then(function (data) {
                 borderColor: "#8e5ea2",
                 fill: false
             }]
-        }
+        },
+        options : {
+            scales: {
+                y: {
+                    title: {
+                      display: true,
+                      text: 'T Max (F)'
+                    }
+                  },
+
+            }
+          },
     });
+    // tmaxChart.options.scales.yAxes[0].scaleLabel.labelString="T Max (F)";
 
     const tminChart = new Chart(document.getElementById("tminChart"), {
         type: 'line',
@@ -132,7 +80,18 @@ d3.csv(args).then(function (data) {
                 borderColor: "#3cba9f",
                 fill: false
             }]
-        }
+        },
+        options : {
+            scales: {
+                y: {
+                    title: {
+                      display: true,
+                      text: 'T Min (F)'
+                    }
+                  },
+
+            }
+          },
     });
 
     const gddChart = new Chart(document.getElementById("gddChart"), {
@@ -141,24 +100,46 @@ d3.csv(args).then(function (data) {
             labels: labels,
             datasets: [{
                 data: gddData,
-                label: "GDD",
+                label: "Cumulative GDD",
                 borderColor: "#e8c3b9",
                 fill: false
             }]
-        }
+        },
+        options : {
+            scales: {
+                y: {
+                    title: {
+                      display: true,
+                      text: 'Cumulative Growing Degree Days (F)'
+                    }
+                  },
+
+            }
+          },
     });
 
-    const airPressureChart = new Chart(document.getElementById("airPressureChart"), {
+    const ETc_mmChart = new Chart(document.getElementById("ETc_mmChart"), {
         type: 'line',
         data: {
             labels: labels,
             datasets: [{
-                data: airPressureData,
-                label: "Air Pressure",
+                data: ETc_mmData,
+                label: "Evapotranspiration (mm)",
                 borderColor: "#c45850",
                 fill: false
             }]
-        }
+        },
+        options : {
+            scales: {
+                y: {
+                    title: {
+                      display: true,
+                      text: 'Daily Evapotranspiration (mm)'
+                    }
+                  },
+
+            }
+          },
     });
 
     // Create the date range slider
@@ -211,8 +192,8 @@ d3.csv(args).then(function (data) {
         gddChart.data.datasets[0].data = filteredGDD_cumData;
         gddChart.update();
 
-        airPressureChart.data.labels = filteredLabels;
-        airPressureChart.data.datasets[0].data = filteredETc_mmData;
-        airPressureChart.update();
+        ETc_mmChart.data.labels = filteredLabels;
+        ETc_mmChart.data.datasets[0].data = filteredETc_mmData;
+        ETc_mmChart.update();
     });
 });
