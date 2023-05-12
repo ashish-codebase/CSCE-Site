@@ -12,11 +12,8 @@ $LName=$_POST['LName'];
 $Phone=$_POST['Phone'];
 
 echo $Email;
-// SQL Login and server details:
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "internet_class";
+
+include 'DB_Login.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
