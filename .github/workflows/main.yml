@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp://ashish-internet@files.000webhost.com/public_html
+        server: ftp.ashish-internet@files.000webhost.com/public_html
         username: ashish-internet
         password: ${{ secrets.ftp_password }}
