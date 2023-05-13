@@ -5,7 +5,7 @@
 
     .slider {
         /* -webkit-appearance: none; */
-        width: 70%;
+        width: 75%;
         margin: 0 auto;
         height: 35px;
         background: #d3d3d300;
@@ -20,45 +20,37 @@
     }
 
     .slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
+        /* -webkit-appearance: none; */
         appearance: none;
-        width: 25px;
-        height: 25px;
+        width: 15px;
+        height: 15px;
         background: #04AA6D;
         cursor: pointer;
     }
 
     .slider::-moz-range-thumb {
-        width: 25px;
-        height: 25px;
+        width: 15px;
+        height: 15px;
         background: #04AA6D;
         cursor: pointer;
     }
 </style>
 <h1>Date Range Selector.</h1>
 
-<div class="container pt-lg-5">
-    <div class="row">
-        <div class="col-6"><h3 class="">Drag the range slider to display that range</h3>
+<div class="container">
+    <div class="row my-5">
+
+        <div class="col-md">
+            <div class="box"><h3 class="">Drag the range slider to display selected data</h3>  </div>                      
         </div>
-        <div class="col-3">
-            <div id="StartDate" class="box fw-bold text-start"></div>
-        </div>
-        <div class="col-3">
-            <div class="box">
-                <div id="EndDate" class="box fw-bold text-start"></div>
+        <div  class="col-sm fw-bold text-start">
+            <div id="StartDate" class="box">
+
             </div>
         </div>
-    </div>
-</div>
-
-<div class="container-lg">
-    <div class="my-3 row ">
-
-        <div class="col-6">
+        <div class=" col-sm fw-bold text-start">
+            <div id="EndDate"  class="box"></div>
         </div>
-        <div id="StartDate" class="col-3 fw-bold text-start"></div>
-        <div id="EndDate" class="col-3 fw-bold text-start"></div>
     </div>
 </div>
 <div class="slider">
@@ -66,6 +58,16 @@
 </div>
 
 <div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div id="StartDate" class="box fw-bold text-start mt-2"></div>
+        </div>
+        <div class="col-3">
+            <div class="box">
+                <div id="EndDate" class="box fw-bold text-start mt-2"></div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg m-2 p-2 chart-d"> <canvas id="vpdmaxChart"></canvas>
         </div>
@@ -79,7 +81,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg m-2 p-2 chart-d"> <canvas id="ETc_mmChart"></canvas>
+        <div class="col-lg m-2 p-2 chart-d mb-3"> <canvas id="ETc_mmChart"></canvas>
         </div>
 
     </div>
