@@ -34,7 +34,7 @@
             //.toLocaleDateString('en-US')
             const labels = data.map(d => d.date);
             // const labels = lable_formatted;
-            const vpdmaxData = data.map(d => d.VPDmax);
+            const vpdmaxData = data.map(d => isNan(d.VPDmax)? NaN:d.VPDmax);
             // console.log(vpdmaxData);
             // console.log(labels);
 

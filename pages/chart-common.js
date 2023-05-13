@@ -156,7 +156,7 @@ d3.csv(args).then(function (data) {
         // tooltips: [true, true],
         connect: true,
         behaviour: 'drag',
-        start: [new Date(dateRange[1]).getTime()-(21*86400000), new Date(dateRange[1]).getTime()]
+        start: [new Date(dateRange[1]).getTime()-(600*86400000), new Date(dateRange[1]).getTime()]
     });
 
     // Update the charts when the slider range changes
@@ -173,11 +173,11 @@ d3.csv(args).then(function (data) {
 
         // Update the labels and data arrays for each chart
         const filteredLabels = filteredData.map(d => d.date.toLocaleDateString('en-US'));
-        const filteredVpdmaxData = filteredData.map(d => d.VPDmax);
-        const filteredTmax_FData = filteredData.map(d => d.Tmax_F);
-        const filteredTmin_FData = filteredData.map(d => d.Tmin_F);
-        const filteredGDD_cumData = filteredData.map(d => d.GDD_cum);
-        const filteredETc_mmData = filteredData.map(d => d.ETc_mm);
+        const filteredVpdmaxData = filteredData.map(d =>  (d.VPDmax==="")? NaN: d.VPDmax);
+        const filteredTmax_FData = filteredData.map(d => (d.Tmax_F==="")? NaN: d.Tmax_F);
+        const filteredTmin_FData = filteredData.map(d => (d.Tmin_F==="")? NaN: d.Tmin_F);
+        const filteredGDD_cumData = filteredData.map(d => (d.GDD_cum==="")? NaN: d.GDD_cum);
+        const filteredETc_mmData = filteredData.map(d => (d.ETc_mm==="")? NaN: d.ETc_mm);
 
         // Update the chart data
         vpdmaxChart.data.labels = filteredLabels;
