@@ -30,7 +30,7 @@
                             <input class="col-7" type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email not matching abc.xyz@efg.com patern." /></input>
                         </div>
 
-                        <div class="row">
+                        <div class="row ">
                             <label class="col-3">Passowrd:</label>
                             <input class="col-7 " type="password" name="Password" /></input>
                         </div>
