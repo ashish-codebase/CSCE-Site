@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col col-3"><a href="https://parallel41-dev.web.app/#/documentation" target="_blank">Credits</a></div>
             <div class="col col-3"><a href="https://hprcc.unl.edu/" target="_blank">Data Source</a></div>
-            <div class="col col-6"><a href="https://github.com/ashish-codebase/CSCE-Site" target="_blank">Source Code @ Github</a></div>
+            <div class="col col-6"><a href="https://github.com/ashish-codebase/CSCE-Site" target="_blank">Source Code @ Github (Public)</a></div>
         </div>
     </div>
 </footer>
