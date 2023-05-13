@@ -5,5 +5,5 @@
 </div>
 <?php include './pages/site-list.html' ?>
 <?php include './pages/chart-template.html' ?>
-<script src="./pages/chart-common.js" data-args="./Data/Grant_Compiled.csv"></script>
+<script src="./js/chart-common.js" data-args="./Data/Grant_Compiled.csv"></script>
 </div>

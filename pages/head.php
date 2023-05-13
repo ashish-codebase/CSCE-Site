@@ -18,9 +18,9 @@
 
         gtag('config', 'G-JNPG6CTKFN');
     </script>
-    <script src="./jquery.js"></script>
-    <script src="./resources/chart.js"></script>
-    <script src="./resources/d3.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/d3.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="./js/nouislider.min.js"></script>
     <link rel="stylesheet" href="./css/nouislider.min.css" />
