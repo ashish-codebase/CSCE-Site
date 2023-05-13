@@ -20,6 +20,9 @@ d3.csv(args).then(function (data) {
     const tminData = data.map(d => d.Tmin_F);
     const gddData = data.map(d => d.GDD_cum);
     const ETc_mmData = data.map(d => d.ETc_mm);
+    Chart.defaults.color = '#665555';
+    Chart.defaults.font.size = 14;
+    Chart.defaults.font.weight = 'bold';
 
     const vpdmaxChart = new Chart(document.getElementById("vpdmaxChart"), {
         type: 'line',
@@ -32,17 +35,17 @@ d3.csv(args).then(function (data) {
                 fill: false
             }]
         },
-        options : {
+        options: {
             scales: {
                 y: {
                     title: {
-                      display: true,
-                      text: 'Max. Vapor Pressure Deficit (Pa)'
+                        display: true,
+                        text: 'Max. Vapor Pressure Deficit (Pa)'
                     }
-                  },
+                },
 
             }
-          },
+        },
     });
 
     const tmaxChart = new Chart(document.getElementById("tmaxChart"), {
@@ -56,17 +59,17 @@ d3.csv(args).then(function (data) {
                 fill: false
             }]
         },
-        options : {
+        options: {
             scales: {
                 y: {
                     title: {
-                      display: true,
-                      text: 'T Max (F)'
+                        display: true,
+                        text: 'T Max (F)'
                     }
-                  },
+                },
 
             }
-          },
+        },
     });
     // tmaxChart.options.scales.yAxes[0].scaleLabel.labelString="T Max (F)";
 
@@ -81,17 +84,17 @@ d3.csv(args).then(function (data) {
                 fill: false
             }]
         },
-        options : {
+        options: {
             scales: {
                 y: {
                     title: {
-                      display: true,
-                      text: 'T Min (F)'
+                        display: true,
+                        text: 'T Min (F)'
                     }
-                  },
+                },
 
             }
-          },
+        },
     });
 
     const gddChart = new Chart(document.getElementById("gddChart"), {
@@ -105,17 +108,17 @@ d3.csv(args).then(function (data) {
                 fill: false
             }]
         },
-        options : {
+        options: {
             scales: {
                 y: {
                     title: {
-                      display: true,
-                      text: 'Cumulative Growing Degree Days (F)'
+                        display: true,
+                        text: 'Cumulative Growing Degree Days (F)'
                     }
-                  },
+                },
 
             }
-          },
+        },
     });
 
     const ETc_mmChart = new Chart(document.getElementById("ETc_mmChart"), {
@@ -129,19 +132,18 @@ d3.csv(args).then(function (data) {
                 fill: false
             }]
         },
-        options : {
+        options: {
             scales: {
                 y: {
                     title: {
-                      display: true,
-                      text: 'Daily Evapotranspiration (mm)'
+                        display: true,
+                        text: 'Daily Evapotranspiration (mm)'
                     }
-                  },
+                },
 
             }
-          },
+        },
     });
-
     // Create the date range slider
     const slider = document.getElementById("slider");
     const dateRange = [labels[0], labels[labels.length - 1]];
@@ -156,15 +158,15 @@ d3.csv(args).then(function (data) {
         // tooltips: [true, true],
         connect: true,
         behaviour: 'drag',
-        start: [new Date(dateRange[1]).getTime()-(21*86400000), new Date(dateRange[1]).getTime()] //Default view: with last 21 days of data. Checked if the entire datast is less then start location is just at the beginning of the slider.
+        start: [new Date(dateRange[1]).getTime() - (21 * 86400000), new Date(dateRange[1]).getTime()] //Default view: with last 21 days of data. Checked if the entire datast is less then start location is just at the beginning of the slider.
     });
 
     // Update the charts when the slider range changes
     slider.noUiSlider.on("update", function (values, handle) {
         const startDate = new Date(+values[0]);
         const endDate = new Date(+values[1]);
-        document.getElementById("StartDate").innerText="From ".concat(startDate.toLocaleDateString());
-        document.getElementById("EndDate").innerText="To ".concat(endDate.toLocaleDateString());
+        document.getElementById("StartDate").innerText = "From ".concat(startDate.toLocaleDateString());
+        document.getElementById("EndDate").innerText = "To ".concat(endDate.toLocaleDateString());
 
         // Filter the data based on the selected range
         const filteredData = data.filter(function (d) {
@@ -173,11 +175,11 @@ d3.csv(args).then(function (data) {
 
         // Update the labels and data arrays for each chart
         const filteredLabels = filteredData.map(d => d.date.toLocaleDateString('en-US'));
-        const filteredVpdmaxData = filteredData.map(d =>  (d.VPDmax==="")? NaN: d.VPDmax);
-        const filteredTmax_FData = filteredData.map(d => (d.Tmax_F==="")? NaN: d.Tmax_F);
-        const filteredTmin_FData = filteredData.map(d => (d.Tmin_F==="")? NaN: d.Tmin_F);
-        const filteredGDD_cumData = filteredData.map(d => (d.GDD_cum==="")? NaN: d.GDD_cum);
-        const filteredETc_mmData = filteredData.map(d => (d.ETc_mm===""||d.ETc_mm==="0.0")? NaN: d.ETc_mm);
+        const filteredVpdmaxData = filteredData.map(d => (d.VPDmax === "") ? NaN : d.VPDmax);
+        const filteredTmax_FData = filteredData.map(d => (d.Tmax_F === "") ? NaN : d.Tmax_F);
+        const filteredTmin_FData = filteredData.map(d => (d.Tmin_F === "") ? NaN : d.Tmin_F);
+        const filteredGDD_cumData = filteredData.map(d => (d.GDD_cum === "") ? NaN : d.GDD_cum);
+        const filteredETc_mmData = filteredData.map(d => (d.ETc_mm === "" || d.ETc_mm === "0.0") ? NaN : d.ETc_mm);
 
         // Update the chart data
         vpdmaxChart.data.labels = filteredLabels;

@@ -1,0 +1,5 @@
+git commit -a -m "New Commits"
+git config git-ftp.url ftp://files.000webhost.com/public_html/
+git config git-ftp.user ashish-internet
+git config git-ftp.password Hanapajwa_101
+git ftp push

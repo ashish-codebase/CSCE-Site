@@ -6,7 +6,7 @@
     .slider {
         /* -webkit-appearance: none; */
         width: 70%;
-        margin:0 auto;
+        margin: 0 auto;
         height: 35px;
         background: #d3d3d300;
         outline: none;
@@ -35,11 +35,27 @@
         cursor: pointer;
     }
 </style>
-
 <h1>Date Range Selector.</h1>
-<div class="container">
-    <div class="my-3 row">
-        <div class="col-6"><h3 class="px-3">Drag the range slider to display that range</h3>
+
+<div class="container pt-lg-5">
+    <div class="row">
+        <div class="col-6"><h3 class="">Drag the range slider to display that range</h3>
+        </div>
+        <div class="col-3">
+            <div id="StartDate" class="box fw-bold text-start"></div>
+        </div>
+        <div class="col-3">
+            <div class="box">
+                <div id="EndDate" class="box fw-bold text-start"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-lg">
+    <div class="my-3 row ">
+
+        <div class="col-6">
         </div>
         <div id="StartDate" class="col-3 fw-bold text-start"></div>
         <div id="EndDate" class="col-3 fw-bold text-start"></div>
