@@ -26,28 +26,28 @@
                 <form method="post" action="register_new.php" >
                     <div class="container">
                         <div class="row">
-                            <label class="col-lg">Email Address:</label>
-                            <input class="col-lg" type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email not matching abc.xyz@efg.com patern." /></input>
+                            <label class="col-3">Email Address:</label>
+                            <input class="col-7" type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email not matching abc.xyz@efg.com patern." /></input>
                         </div>
 
                         <div class="row">
-                            <label class="col-lg">Passowrd:</label>
-                            <input class="col-lg" type="password" name="Password" /></input>
+                            <label class="col-3">Passowrd:</label>
+                            <input class="col-7" type="password" name="Password" /></input>
                         </div>
 
                         <div class="row">
-                            <label class="col-lg">First Name:</label>
-                            <input class="col-lg" type="text" name="FName" /></input>
+                            <label class="col-3 ">First Name:</label>
+                            <input class="col-7" type="text" name="FName" /></input>
                         </div>
 
                         <div class="row">
-                            <label class="col-lg">Last Name:</label>
-                            <input class="col-lg" type="text" name="LName" /></input>
+                            <label class="col-3">Last Name:</label>
+                            <input class="col-7" type="text" name="LName" /></input>
                         </div>
 
                         <div class="row">
-                            <label class="col-lg">Phone Number:</label>
-                            <input class="col-lg" type="text" name="Phone" pattern="[0-9]{10,13}" title="Phone no. must have 10-13 digits." /></input>
+                            <label class="col-3">Phone Number:</label>
+                            <input class="col-7" type="text" name="Phone" pattern="[0-9]{10,13}" title="Phone no. must have 10-13 digits." /></input>
                         </div>
 
                     </div>
@@ -62,19 +62,22 @@
             <div class="col-lg mt-3 mb-3 me-3 bg60-1 p-3">
                 <h2>Login</h2>
                 <form method="post" action="login_user.php">
+                    <div class="flex-container">
                     <div class="container">
                         <div class="row">
-                            <label class="col-lg" for="username">Email:</label>
-                            <input class="col-lg" type="text" id="username" name="Email" required>
+                            <label class="col-3" for="username">Email:</label>
+                            <input class="col-7" type="text" id="username" name="Email" required>
                         </div>
                         <div class="row">
-                            <label class="col-lg" for="password">Password:</label>
-                            <input class="col-lg" type="password" id="password" name="Password" required>
+                            <label class="col-3" for="password">Password:</label>
+                            <input class="col-7" type="password" id="password" name="Password" required>
                         </div>
                     </div>
+                    </div>
+
                     <br>
-                    <input class="btn-lg btn btn-info m-2" type="submit" value="Login">
-                    <input class="btn-lg btn btn-info m-2" type="submit" value="Logout">
+                    <input class="btn-3 btn btn-info m-2" type="submit" value="Login">
+                    <input class="btn-7 btn btn-info m-2" type="submit" value="Logout">
 
                 </form>
             </div>
