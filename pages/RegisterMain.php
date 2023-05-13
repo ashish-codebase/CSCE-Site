@@ -32,7 +32,7 @@
 
                         <div class="row">
                             <label class="col-3">Passowrd:</label>
-                            <input class="col-7" type="password" name="Password" /></input>
+                            <input class="col-7 " type="password" name="Password" /></input>
                         </div>
 
                         <div class="row">
