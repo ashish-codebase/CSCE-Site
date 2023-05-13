@@ -156,7 +156,7 @@ d3.csv(args).then(function (data) {
         // tooltips: [true, true],
         connect: true,
         behaviour: 'drag',
-        start: [new Date(dateRange[1]).getTime()-(21*86400000), new Date(dateRange[1]).getTime()]
+        start: [new Date(dateRange[1]).getTime()-(21*86400000), new Date(dateRange[1]).getTime()] //Default view: with last 21 days of data. Checked if the entire datast is less then start location is just at the beginning of the slider.
     });
 
     // Update the charts when the slider range changes
