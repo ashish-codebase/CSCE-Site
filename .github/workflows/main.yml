@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.epizy.com/public_html/htdocs
+        server: ftp.epizy.com/htdocs
         username: epiz_33966438
         password: Hanapajwa_101
