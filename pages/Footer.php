@@ -6,5 +6,4 @@
             <div class="col col-6"><a href="https://github.com/ashish-codebase/CSCE-Site" target="_blank">Source Code @ Github</a></div>
         </div>
     </div>
-    <!-- <div class="py-3"></div> -->
 </footer>

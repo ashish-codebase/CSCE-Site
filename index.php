@@ -30,13 +30,11 @@ else{
 <html lang="en-us">
 
 <?php
-    // Send the page_css (either default for main page or updated values for other pages)
     include "./pages/head.php";
 ?>
 
 <body>
     <?php
-    // echo "PHP query string passed path = " . $page_path;
     include './pages/NavBar.html';
     include $page_path;
     include './pages/Footer.php';
