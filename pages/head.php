@@ -23,11 +23,11 @@
     <script src="./js/d3.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="./js/nouislider.min.js"></script>
-    <link rel="stylesheet" href="./css/nouislider.min.css" />
+    <link rel="stylesheet" href="./CSS/nouislider.min.css" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Daily EC data from towers.</title>
-    <link href="./css/bootstrap.min.css"
+    <link href="./CSS/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="./js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <?php if ($page_css != "./CSS/Main.css") {
