@@ -13,14 +13,16 @@ $Phone=$_POST['Phone'];
 
 echo $Email;
 
+// This include connects to either localhost or liver server
+// And returns the $conn variable for further code execution.
 include 'DB_Login.php';
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+// $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
 
 
 // Output data of each row
