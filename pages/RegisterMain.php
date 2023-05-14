@@ -1,20 +1,17 @@
-<?php
-
-?>
 <style>
     .Register {
         /* padding: 20px; */
         background-color: #bdca99;
-        }
+    }
 
     .td-1 {
         width: 500px;
     }
-    .col, .col-lg{
+
+    .col,
+    .col-lg {
         /* border-style: solid; */
-
         border-width: 1px;
-
     }
 </style>
 <main class="Register">
@@ -23,7 +20,7 @@
             <div class="col-lg me-3 mt-3 mb-3 bg60-1 p-3">
                 <h2>Register</h2>
                 <p><strong>Login / Register to select your favourite station.</strong></p>
-                <form method="post" action="register_new.php" >
+                <form method="post" action="register_new.php">
                     <div class="container">
                         <div class="row">
                             <label class="col-3">Email Address:</label>
@@ -59,36 +56,38 @@
                 ?>
                 <br>
             </div>
+            <?php
+            if (!$_SESSION['logged_in'] == 'true') {
+                echo "<div>Not logged in.</div>";
+            }
+            ?>
             <div class="col-lg mt-3 mb-3 me-3 bg60-1 p-3">
                 <h2>Login</h2>
                 <form method="post" action="login_user.php">
                     <div class="flex-container">
-                    <div class="container">
-                        <div class="row">
-                            <label class="col-3" for="username">Email:</label>
-                            <input class="col-7" type="text" id="username" name="Email" required>
+                        <div class="container">
+                            <div class="row">
+                                <label class="col-3" for="username">Email:</label>
+                                <input class="col-7" type="text" id="username" name="Email" required>
+                            </div>
+                            <div class="row">
+                                <label class="col-3" for="password">Password:</label>
+                                <input class="col-7" type="password" id="password" name="Password" required>
+                            </div>
                         </div>
-                        <div class="row">
-                            <label class="col-3" for="password">Password:</label>
-                            <input class="col-7" type="password" id="password" name="Password" required>
-                        </div>
-                    </div>
                     </div>
 
                     <br>
                     <input class="btn-3 btn btn-info m-2" type="submit" value="Login">
                     <input class="btn-7 btn btn-info m-2" type="submit" value="Logout">
-
                 </form>
             </div>
             <?php
-        if ($_SESSION['logged_in']=='true')
-        {
-         include "./pages/user_table.php";
-        }
-          ?>
+            if ($_SESSION['logged_in'] == 'true') {
+                include "./pages/user_table.php";
+            }
+            ?>
         </div>
-
     </div>
 </main>
 </div>

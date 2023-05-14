@@ -1,6 +1,9 @@
 <?php
 @session_start();
-// include('read_db.php');
+$database = new PDO('sqlite:./Data/WebsiteDatabase.db');
+
+$query_txt = "SELECT * FROM `users`";
+$result = $database->query($query_txt);
 ?>
 <hr>
 <br>
@@ -34,8 +37,6 @@
                     $LName = $row['LName'];
                     $Phone = $row['Phone'];
                 }
-
-
                 echo "<tr>";
                 echo "<td>" . $Email . "</td>";
                 echo "<td>" . $FName . "</td>";

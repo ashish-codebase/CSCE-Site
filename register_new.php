@@ -23,9 +23,7 @@ $statement = $database->query($query_txt);
 $result = $statement->fetch(PDO::FETCH_ASSOC);
 $count = $result['count'];
 // Check if email address already exists in database
-if ($count === 0) {
-    $_SESSION['logged_in'] = 'true';
-    $_SESSION['NewUserSuccess'] = "User alreayd exists";
+if (!$result) {
     $insert_qery = "INSERT INTO users (Email , FName, LName, Phone, Password)
         VALUES (
         '$_POST[Email]',
@@ -42,12 +40,7 @@ if ($count === 0) {
         $_SESSION['logged_in'] = 'true';
         $_SESSION['current_user_mail'] = $Email;
     }
-
 } else {
-        echo "Error: Couldn't write to the database";
+    echo "Error: Couldn't write to the database";
 }
 header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
-
-exit();
-
-    // $conn->close();
