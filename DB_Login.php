@@ -1,46 +1,100 @@
 <?php
-// SQL Login and server details:
+// $database = new PDO('sqlite:./Data/WebsiteDatabase.db');
+// $query = "SELECT * FROM 'users'";
+// $result = $database->query($query);
 
-class credentials_localhost {
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $dbname = "internet_class";
-    function login (){
-        // Create connection
-        $conn = new mysqli( hostname: $this->servername, username: $this->username , password: $this->password, database: $this->dbname);
-        return $conn;
-        }
-}
-class credentials_live {
-    private $servername = "localhost";
-    private $username = "id20717158_csce";
-    private $password = "Hanapajwa_101";
-    private $dbname = "id20717158_csce";
-    function login():mysqli {
-        // Create connection
-        $conn = new mysqli( hostname: $this->servername, username: $this->username , password: $this->password, database: $this->dbname);
-        return $conn;
-        }
-}
+// foreach ($result as $row) {
+//    echo "Email: " . $row['Email'] . "<br>";
+//    echo "FName: " . $row['FName'] . "<br>";
+//    echo "LName: " . $row['LName'] . "<br><br>";
+// }
 
 
-$temp = new credentials_localhost();
-$conn_local = $temp->login();
-
-$temp = new credentials_live();
-$conn_live = $temp->login();
 
 
-$conn = new mysqli();
+// class credentials_localhost
+// {
+//     private $servername;
+//     private $username;
+//     private $password;
+//     private $dbname;
+//     public $connection_error=false;
+//     public function __construct($servername = "localhost", $username = "root", $password = "", $dbname = "internet_class")
+//     {
+//         $this->servername = $servername;
+//         $this->username = $username;
+//         $this->password = $password;
+//         $this->dbname = $dbname;
+//     }
 
-if (!$conn_local->connect_error) {
-    $conn = $conn_local;
-}
-elseif (!$conn_live->connect_error){
-    $conn = $conn_live;
-}
-else{
-    die("Connection failed: " . $conn->connect_error);
-}
+//     public function login()
+//     {
+//         $conn_local = new mysqli();
+//         // Create connection
+//         try {
+//             $conn_local = mysqli_connect(hostname: $this->servername, username: $this->username, password: $this->password, database: $this->dbname);
+//         } catch (Exception $e) {
+//             // echo $e->getMessage();
+//             $this->connection_error=true;
+//         } finally {
+//             // Return the connection
+//             return $conn_local;
+//         }
+//     }
+// }
+// class credentials_live
+// {
+//     private $servername;
+//     private $username;
+//     private $password;
+//     private $dbname;
+//     public $connection_error=false;
+//     public function __construct($servername = "localhost", $username = "id20717158_csce", $password = "Hanapajwa_101", $dbname = "id20717158_csce")
+//     {
+//         $this->servername = $servername;
+//         $this->username = $username;
+//         $this->password = $password;
+//         $this->dbname = $dbname;
+//     }
 
+
+//     public function login()
+//     {
+//         $conn_live = new mysqli();
+//         // Create connection
+//         try {
+//            $conn_live = mysqli_connect(hostname: $this->servername, username: $this->username, password: $this->password, database: $this->dbname);
+//         } catch (Exception $e) {
+//             // echo $e->getMessage();
+//             $this->connection_error=true;
+//         } finally {
+//             // Return the connection
+//             return $conn_live;
+//         }
+//     }
+// }
+
+// $local = new credentials_localhost();
+// $conn_local =$local->login();
+
+// $live = new credentials_live();
+// $conn_live = $live->login();
+// try{
+//     @mysqli_select_db($conn_local,'internet_class');
+// }
+// catch (Exception $ex){
+// }
+// try{
+//     @mysqli_select_db($conn_live,'id20717158_csce');
+// }
+// catch (Exception $ex){
+// }
+
+
+// if (!$local->connection_error) {
+//     $conn = $conn_local;
+// } elseif (!$live->connection_error) {
+//     $conn = $conn_live;
+// } else {
+//     die("Connection failed: ");
+// }

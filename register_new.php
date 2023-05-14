@@ -1,47 +1,32 @@
 <?php
 @session_start();
 $_SESSION['logged_in'] = 'false';
-$_SESSION['NewUserSuccess']="";
-$_SESSION['current_user_mail']='';
+$_SESSION['NewUserSuccess'] = "";
+$_SESSION['current_user_mail'] = '';
 
 // User Login credentials
 $Email = $_POST['Email'];
 $Password = $_POST['Password'];
-$FName=$_POST['FName'];
-$LName=$_POST['LName'];
-$Phone=$_POST['Phone'];
+$FName = $_POST['FName'];
+$LName = $_POST['LName'];
+$Phone = $_POST['Phone'];
 
 echo $Email;
-
-// This include connects to either localhost or liver server
-// And returns the $conn variable for further code execution.
-include 'DB_Login.php';
-
-// Create connection
-// $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
-
 
 // Output data of each row
-echo $Email;
+
+$database = new PDO('sqlite:./Data/WebsiteDatabase.db');
 
 $query_txt = "SELECT * FROM `users` WHERE Email= '$Email'";
-
+$statement = $database->query($query_txt);
 // Execute SQL statement
-$result = mysqli_query($conn, $query_txt);
-
+$result = $statement->fetch(PDO::FETCH_ASSOC);
+$count = $result['count'];
 // Check if email address already exists in database
-if (mysqli_num_rows($result) > 0) {
+if ($count === 0) {
     $_SESSION['logged_in'] = 'true';
-    $_SESSION['NewUserSuccess']="User alreayd exists";
-    header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
-    exit();
-} else {
-    
-    $sql = "INSERT INTO users (Email , FName, LName, Phone, Password)
+    $_SESSION['NewUserSuccess'] = "User alreayd exists";
+    $insert_qery = "INSERT INTO users (Email , FName, LName, Phone, Password)
         VALUES (
         '$_POST[Email]',
         '$_POST[FName]',
@@ -49,16 +34,20 @@ if (mysqli_num_rows($result) > 0) {
         '$_POST[Phone]',
         '$_POST[Password]'
         )";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-    $_SESSION['NewUserSuccess']="New User updated!";
-    $_SESSION['logged_in'] = 'true';
-    $_SESSION['current_user_mail']=$Email;
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    $statement = $database->prepare($insert_qery);
+    $success = $statement->execute();
+    if ($success) {
+        echo "New record created successfully";
+        $_SESSION['NewUserSuccess'] = "New User updated!";
+        $_SESSION['logged_in'] = 'true';
+        $_SESSION['current_user_mail'] = $Email;
     }
-    header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
-    exit();
+
+} else {
+        echo "Error: Couldn't write to the database";
 }
-    $conn->close();
+header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
+
+exit();
+
+    // $conn->close();

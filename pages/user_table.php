@@ -1,6 +1,6 @@
 <?php
 @session_start();
-include('read_db.php');
+// include('read_db.php');
 ?>
 <hr>
 <br>

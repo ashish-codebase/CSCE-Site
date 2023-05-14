@@ -1,7 +1,7 @@
 <?php
 // This include connects to either localhost or liver server
 // And returns the $conn variable for further code execution.
-include 'DB_Login.php';
+// include 'DB_Login.php';
 
 
 // Check connection
