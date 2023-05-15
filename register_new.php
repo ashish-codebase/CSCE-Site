@@ -46,5 +46,7 @@ if (is_null($result)) {
     $_SESSION['current_user_mail']=$Email;
     $_SESSION['NewUserSuccess'] = "Account already exists";
 }
-header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
+// header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
+echo "<script type='text/javascript'> document.location = './index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css'; </script>";
+
 exit();

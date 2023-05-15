@@ -29,5 +29,6 @@ else{
     $_SESSION['current_user_mail']=$Email;
 }
 
-header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
+// header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
+echo "<script type='text/javascript'> document.location = './index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css'; </script>";
 exit();
