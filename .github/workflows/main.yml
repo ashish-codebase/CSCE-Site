@@ -13,4 +13,4 @@ jobs:
       with:
         server: files.000webhost.com
         username: ashish-internet
-        password: Hanapajwa_101
+        password:  ${{secrets.FTP_PASSWORD}}
