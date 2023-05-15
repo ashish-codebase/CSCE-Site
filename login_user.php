@@ -11,8 +11,9 @@ $_SESSION['current_user_mail']='';
 // User Login credentials
 $Email = $_POST['Email'];
 $Password = $_POST['Password'];
-// echo $Email;
 
+
+// Read data from local DB file
 $database = new PDO('sqlite:./Data/WebsiteDatabase.db');
 
 $query_txt = "SELECT * FROM `users` WHERE Email= '$Email'";

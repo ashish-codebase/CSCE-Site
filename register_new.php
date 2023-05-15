@@ -16,10 +16,9 @@ $Phone = $_POST['Phone'];
 
 echo $Email;
 
-// Output data of each row
+// Read data from local DB file
 
 $database = new PDO('sqlite:./Data/WebsiteDatabase.db');
-
 $query_txt = "SELECT * FROM `users` WHERE Email= '$Email'";
 $statement = $database->query($query_txt);
 // Execute SQL statement
