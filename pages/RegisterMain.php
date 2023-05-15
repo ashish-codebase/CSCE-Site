@@ -1,3 +1,6 @@
+<?php
+    @session_start();
+?>
 <style>
     .Register {
         /* padding: 20px; */
@@ -51,14 +54,13 @@
                     <br>
                     <input class="btn-lg btn btn-info" type="submit" value="Register" />
                 </form>
-                <?php
-                echo $_SESSION['NewUserSuccess'];
-                ?>
+
                 <br>
             </div>
             <?php
-            if (!$_SESSION['logged_in'] == 'true') {
-                echo "<div>Not logged in.</div>";
+                // echo "<div>You already have an account: ".$_SESSION['current_user_mail']."</div>";
+            if (!$_SESSION['logged_in'] == "false") {    
+                echo "<div>".$_SESSION['NewUserSuccess']."</div>";
             }
             ?>
             <div class="col-lg mt-3 mb-3 me-3 bg60-1 p-3">
