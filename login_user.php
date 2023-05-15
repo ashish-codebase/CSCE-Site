@@ -30,3 +30,4 @@ else{
 }
 
 header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
+exit(1);

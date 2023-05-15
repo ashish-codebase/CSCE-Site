@@ -47,4 +47,4 @@ if (is_null($result)) {
     $_SESSION['NewUserSuccess'] = "Account already exists";
 }
 header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
-?>
+exit(1);
