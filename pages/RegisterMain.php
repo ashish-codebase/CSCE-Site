@@ -59,7 +59,7 @@
             </div>
             <?php
                 // echo "<div>You already have an account: ".$_SESSION['current_user_mail']."</div>";
-            if (!$_SESSION['logged_in'] == "false") {    
+            if ($_SESSION['logged_in'] === "false") {    
                 echo "<div>".$_SESSION['NewUserSuccess']."</div>";
             }
             ?>
@@ -87,7 +87,7 @@
                 </form>
             </div>
             <?php
-            if ($_SESSION['logged_in'] == 'true') {
+            if ($_SESSION['logged_in'] === 'true') {
                 include "./pages/user_table.php";
             }
             ?>

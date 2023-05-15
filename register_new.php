@@ -1,5 +1,8 @@
 <?php
+$lifetime=600; //Number of seconds cookie stays active after last visit.
 @session_start();
+setcookie(session_name(),session_id(),time()+$lifetime);
+
 $_SESSION['logged_in'] = 'false';
 $_SESSION['NewUserSuccess'] = "";
 $_SESSION['current_user_mail'] = '';
@@ -46,7 +49,7 @@ if (is_null($result)) {
     $_SESSION['current_user_mail']=$Email;
     $_SESSION['NewUserSuccess'] = "Account already exists";
 }
-// header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
-echo "<script type='text/javascript'> document.location = './index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css'; </script>";
+header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
+// echo "<script type='text/javascript'> document.location = './index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css'</script>";
 
 exit();

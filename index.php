@@ -1,5 +1,8 @@
 <?php
+$lifetime=600; //Number of seconds cookie stays active after last visit.
 @session_start();
+setcookie(session_name(),session_id(),time()+$lifetime);
+
 
 if(!isset($isset['NewUserSuccess']))
 {
