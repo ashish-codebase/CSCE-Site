@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-lg me-3 mt-3 mb-3 bg60-1 p-3">
                 <h2>Register</h2>
-                <p><strong>Login / Register to select your favourite station.</strong></p>
+                <p><strong>Register to save your preferences.</strong></p>
                 <form method="post" action="register_new.php">
                     <div class="container">
                         <div class="row">
@@ -65,6 +65,8 @@
             ?>
             <div class="col-lg mt-3 mb-3 me-3 bg60-1 p-3">
                 <h2>Login</h2>
+                <p><strong>Login to load your preferences.</strong></p>
+
                 <form method="post" action="login_user.php">
                     <div class="flex-container">
                         <div class="container">
