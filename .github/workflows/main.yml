@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftpupload.net
+        server: ftpupload.net/htdocs
         username: epiz_33966438
         password:  ${{secrets.FTP_PASSWORD}}
