@@ -1,8 +1,8 @@
 <?php
-    // @session_start();
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
+// @session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <style>
     .Register {
@@ -23,34 +23,34 @@
 <main class="Register">
     <div class="container">
         <div class="row">
-            <div class="col col-5 me-3 mt-3 mb-3 bg60-1 p-3">
+            <div class="col-lg me-3 mt-3 mb-3 bg60-1 p-3">
                 <h2>Register</h2>
                 <p><strong>Register to save your preferences.</strong></p>
                 <form method="post" action="register_new.php">
                     <div class="container">
                         <div class="row">
-                            <label class="col-3">Email Address:</label>
-                            <input class="col-7" type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email not matching abc.xyz@efg.com patern." /></input>
+                            <label class="col-4">Email Address:</label>
+                            <input class="col-8" type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email not matching abc.xyz@efg.com patern." /></input>
                         </div>
 
                         <div class="row ">
-                            <label class="col-3">Passowrd:</label>
-                            <input class="col-7 " type="password" name="Password" /></input>
+                            <label class="col-4">Passowrd:</label>
+                            <input class="col-8 " type="password" name="Password" /></input>
                         </div>
 
                         <div class="row">
-                            <label class="col-3 ">First Name:</label>
-                            <input class="col-7" type="text" name="FName" /></input>
+                            <label class="col-4 ">First Name:</label>
+                            <input class="col-8" type="text" name="FName" /></input>
                         </div>
 
                         <div class="row">
-                            <label class="col-3">Last Name:</label>
-                            <input class="col-7" type="text" name="LName" /></input>
+                            <label class="col-4">Last Name:</label>
+                            <input class="col-8" type="text" name="LName" /></input>
                         </div>
 
                         <div class="row">
-                            <label class="col-3">Phone Number:</label>
-                            <input class="col-7" type="text" name="Phone" pattern="[0-9]{10,13}" title="Phone no. must have 10-13 digits." /></input>
+                            <label class="col-4">Phone Number:</label>
+                            <input class="col-8" type="text" name="Phone" pattern="[0-9]{10,13}" title="Phone no. must have 10-13 digits." /></input>
                         </div>
 
                     </div>
@@ -59,18 +59,19 @@
                 </form>
 
                 <br>
-            </div>
-            <div>You are: 
-            <?php
-            @session_start();
-                // echo "<div>You already have an account: ".$_SESSION['current_user_mail']."</div>";
-            if ($_SESSION['logged_in'] === "false") {    
-                echo $_SESSION['NewUserSuccess'];
-            }
-            ?>
+                <div>You are:
+                    <?php
+                    @session_start();
+                    // echo "<div>You already have an account: ".$_SESSION['current_user_mail']."</div>";
+                    if ($_SESSION['logged_in'] === "false") {
+                        echo $_SESSION['NewUserSuccess'];
+                    }
+                    ?>
+                </div>
             </div>
 
-            <div class="col col-5 mt-3 mb-3 me-3 bg60-1 p-3">
+
+            <div class="col-lg mt-3 mb-3 me-3 bg60-1 p-3">
                 <h2>Login</h2>
                 <p><strong>Login to load your preferences.</strong></p>
 
@@ -78,12 +79,12 @@
                     <div class="flex-container">
                         <div class="container">
                             <div class="row">
-                                <label class="col-3" for="username">Email:</label>
-                                <input class="col-7" type="text" id="username" name="Email" required>
+                                <label class="col-4" for="username">Email:</label>
+                                <input class="col-8" type="text" id="username" name="Email" required>
                             </div>
                             <div class="row">
-                                <label class="col-3" for="password">Password:</label>
-                                <input class="col-7" type="password" id="password" name="Password" required>
+                                <label class="col-4" for="password">Password:</label>
+                                <input class="col-8" type="password" id="password" name="Password" required>
                             </div>
                         </div>
                     </div>
