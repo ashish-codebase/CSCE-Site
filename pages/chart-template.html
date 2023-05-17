@@ -17,15 +17,17 @@
     <div class="row my-5">
 
         <div class="col-md">
-            <div class="box"><h3 class="">Drag the range slider to display selected data</h3>  </div>                      
+            <div class="box">
+                <h3 class="">Drag the range slider to display selected data</h3>
+            </div>
         </div>
-        <div  class="col-sm fw-bold text-start">
+        <div class="col-sm fw-bold text-start">
             <div id="StartDate" class="box">
 
             </div>
         </div>
         <div class="col-sm fw-bold text-start">
-            <div id="EndDate"  class="box"></div>
+            <div id="EndDate" class="box"></div>
         </div>
     </div>
 </div>
@@ -35,30 +37,45 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-3">
-            <div id="StartDate" class="box fw-bold text-start mt-2"></div>
+
+        <div class="col-6">
+            <div> <canvas class="chart-d" id="vpdmaxChart"></canvas>
+            </div>
+            <div>
+                <br>
+                <p>VPD max is the </p>
+            </div>
         </div>
-        <div class="col-3">
-            <div class="box">
-                <div id="EndDate" class="box fw-bold text-start mt-2"></div>
+        <div class="col-md">
+            <div> <canvas class="chart-d" id="tmaxChart"></canvas>
+            </div>
+            <div>
+                <br>
+                <p>VPD max is the </p>
+            </div>
+        </div>
+        <div class="col-md">
+            <div> <canvas class="chart-d" id="tminChart"></canvas>
+            </div>
+            <div>
+                <br>
+                <p>VPD max is the </p>
+            </div>
+        </div>
+        <div class="col-md">
+            <div> <canvas class="chart-d" id="gddChart"></canvas>
+            </div>
+            <div>
+                <br>
+                <p>VPD max is the </p>
+            </div>
+        </div>
+        <div class="col-md">
+            <div> <canvas class="chart-d" id="ETc_mmChart"></canvas>
+            </div>
+            <div>
+                <br>
+                <p>VPD max is the </p>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg m-2 p-2 chart-d"> <canvas id="vpdmaxChart"></canvas>
-        </div>
-        <div class="col-lg m-2 p-2 chart-l"> <canvas id="tmaxChart"></canvas>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg m-2 p-2 chart-d"> <canvas id="tminChart"></canvas>
-        </div>
-        <div class="col-lg m-2 p-2 chart-l"> <canvas id="gddChart"></canvas>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg m-2 p-2 chart-d mb-3"> <canvas id="ETc_mmChart"></canvas>
-        </div>
-
-    </div>
-</div>
