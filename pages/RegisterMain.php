@@ -20,7 +20,7 @@
 <main class="Register">
     <div class="container">
         <div class="row">
-            <div class="col-lg me-3 mt-3 mb-3 bg60-1 p-3">
+            <div class="col col-5 me-3 mt-3 mb-3 bg60-1 p-3">
                 <h2>Register</h2>
                 <p><strong>Register to save your preferences.</strong></p>
                 <form method="post" action="register_new.php">
@@ -63,7 +63,7 @@
                 echo "<div>".$_SESSION['NewUserSuccess']."</div>";
             }
             ?>
-            <div class="col-lg mt-3 mb-3 me-3 bg60-1 p-3">
+            <div class="col col-5 mt-3 mb-3 me-3 bg60-1 p-3">
                 <h2>Login</h2>
                 <p><strong>Login to load your preferences.</strong></p>
 
