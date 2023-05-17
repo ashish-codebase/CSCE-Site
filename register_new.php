@@ -25,7 +25,7 @@ $statement = $database->query($query_txt);
 $result = $statement->fetch(PDO::FETCH_ASSOC);
 // $count = $result['count'];
 // Check if email address already exists in database
-if (is_null($result)) {
+if (!$result) {
     $insert_qery = "INSERT INTO users (Email , FName, LName, Phone, Password)
         VALUES (
         '$_POST[Email]',
