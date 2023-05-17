@@ -1,6 +1,9 @@
 <?php
 $lifetime=600; //Number of seconds cookie stays active after last visit.
-@session_start();
+// @session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 setcookie(session_name(),session_id(),time()+$lifetime);
 
 $_SESSION['logged_in'] = 'false';
@@ -23,7 +26,7 @@ $query_txt = "SELECT * FROM `users` WHERE Email= '$Email'";
 $statement = $database->query($query_txt);
 // Execute SQL statement
 $result = $statement->fetch(PDO::FETCH_ASSOC);
-// $count = $result['count'];
+
 // Check if email address already exists in database
 if (!$result) {
     $insert_qery = "INSERT INTO users (Email , FName, LName, Phone, Password)
@@ -46,8 +49,7 @@ if (!$result) {
     // echo "Error: Couldn't write to the database";
     $_SESSION['logged_in'] = 'false';
     $_SESSION['current_user_mail']=$Email;
-    $_SESSION['NewUserSuccess'] = "Account already exists";
+    $_SESSION["NewUserSuccess"] = "Account already exists";
 }
-header("Location: ./index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css");
-
-exit();
+echo "<script type='text/javascript'> document.location = './index.php?page_path=./pages/RegisterMain.php&page_css=./CSS/RegisterMain.css'</script>";
+// exit();

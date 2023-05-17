@@ -1,5 +1,8 @@
 <?php
-    @session_start();
+    // @session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 ?>
 <style>
     .Register {
@@ -57,12 +60,16 @@
 
                 <br>
             </div>
+            <div>You are: 
             <?php
+            @session_start();
                 // echo "<div>You already have an account: ".$_SESSION['current_user_mail']."</div>";
             if ($_SESSION['logged_in'] === "false") {    
-                echo "<div>".$_SESSION['NewUserSuccess']."</div>";
+                echo $_SESSION['NewUserSuccess'];
             }
             ?>
+            </div>
+
             <div class="col col-5 mt-3 mb-3 me-3 bg60-1 p-3">
                 <h2>Login</h2>
                 <p><strong>Login to load your preferences.</strong></p>

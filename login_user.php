@@ -1,7 +1,10 @@
 <?php
 // Start a new session
 $lifetime=600; //Number of seconds cookie stays active after last visit.
-@session_start();
+// @session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 setcookie(session_name(),session_id(),time()+$lifetime);
  
 $_SESSION['logged_in'] = 'false';
