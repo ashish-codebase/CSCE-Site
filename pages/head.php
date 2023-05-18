@@ -21,7 +21,7 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/chart.js"></script>
     <script src="./js/d3.min.js"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
     <script src="./js/nouislider.min.js"></script>
     <link rel="stylesheet" href="./CSS/nouislider.min.css" />
     <meta charset="utf-8">
