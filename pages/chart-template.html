@@ -16,16 +16,21 @@
 <div class="container overflow-hidden">
     <div class="row my-5">
 
-        <div class="col-sm-8">
+        <div class="col">
             <div class="box">
                 <h3 class="">Drag the range slider to display selected data</h3>
             </div>
         </div>
-        <div class="col fw-bold bg60-2 p-3 border mx-3">
-            <aside id="StartDate" class="box"></aside>
-            <aside id="EndDate" class="box"></aside>
-        </div>
-
+        <table class="col fw-bold bg60-2 mx-3 table-success">
+            <tr>
+                <td style="width: 60px; padding: 5px 10px;">From:</td>
+                <td id="StartDate" ></td>
+            </tr>
+            <tr>
+                <td style="width: 60px; padding:5px 10px;">To: </td>
+                <td id="EndDate" ></td>
+            </tr>
+        </table>
     </div>
 </div>
 <div class="slider">

@@ -165,8 +165,8 @@ d3.csv(args).then(function (data) {
     slider.noUiSlider.on("update", function (values, handle) {
         const startDate = new Date(+values[0]);
         const endDate = new Date(+values[1]);
-        document.getElementById("StartDate").innerText = "From ".concat(startDate.toLocaleDateString());
-        document.getElementById("EndDate").innerText = "To ".concat(endDate.toLocaleDateString());
+        document.getElementById("StartDate").innerText = startDate.toLocaleDateString();
+        document.getElementById("EndDate").innerText = endDate.toLocaleDateString();
 
         // Filter the data based on the selected range
         const filteredData = data.filter(function (d) {
