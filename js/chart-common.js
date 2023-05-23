@@ -104,7 +104,7 @@ d3.csv(args).then(function (data) {
             datasets: [{
                 data: gddData,
                 label: "Cumulative GDD",
-                borderColor: "#e8c3b9",
+                borderColor: "#00c3b9",
                 fill: false
             }]
         },

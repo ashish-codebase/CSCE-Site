@@ -6,9 +6,13 @@
         height: 35px;
         background: #d3d3d300;
         outline: none;
-        opacity: 0.7;
+        opacity: 1;
         -webkit-transition: .2s;
         transition: opacity .2s;
+    }
+    .chart-d{
+        background-color: rgb(248 255 240);
+        border-color: #c9e9c5;
     }
 </style>
 <h1>Date Range Selector.</h1>
@@ -16,10 +20,10 @@
 <div class="container overflow-hidden">
     <div class="row my-5">
 
-        <div class="col">
+        <div class="col-sm">
             <h3>Drag the range slider to display selected data</h3>
         </div>
-        <table class="col-2 fw-bold mx-3">
+        <table class="col-2 fw-bold m-3">
             <tr>
                 <td style="width: 60px; padding: 5px 10px;">From:</td>
                 <td id="StartDate"></td>
@@ -31,13 +35,10 @@
         </table>
     </div>
 </div>
-<div class="slider">
-    <div id="slider"></div>
-</div>
 
 <div class="container">
-    <div class="row">
-
+    <div class="row ">
+        <div id="slider" class="mb-5"></div>
         <div class="container-fluid">
             <div> <canvas class="chart-d" id="vpdmaxChart"></canvas>
             </div>
