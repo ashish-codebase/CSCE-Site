@@ -6,4 +6,10 @@
             <div class="col col-6"><a href="https://github.com/ashish-codebase/CSCE-Site" target="_blank">Source Code @ Github (Public)</a></div>
         </div>
     </div>
+    <script>
+        window.addEventListener('beforeunload', function() {
+            localStorage.clear();
+            sessionStorage.clear();
+        });
+    </script>
 </footer>

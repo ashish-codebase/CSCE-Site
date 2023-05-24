@@ -18,8 +18,10 @@ d3.csv(args).then(function (data) {
 
     const tmaxData = data.map(d => d.Tmax_F);
     const tminData = data.map(d => d.Tmin_F);
-    const gddData = data.map(d => d.GDD_cum);
-    const ETc_mmData = data.map(d => d.ETc_mm);
+    const cum_gddData = data.map(d => d.GDD_cum);
+    const ETc_mmData1 = data.map(d => d.ETc_mm);
+    const ETc_mmData2 = data.map(d => d.ETc_mm);
+
     Chart.defaults.color = '#665555';
     Chart.defaults.font.size = 14;
     Chart.defaults.font.weight = 'bold';
@@ -71,7 +73,6 @@ d3.csv(args).then(function (data) {
             }
         },
     });
-    // tmaxChart.options.scales.yAxes[0].scaleLabel.labelString="T Max (F)";
 
     const tminChart = new Chart(document.getElementById("tminChart"), {
         type: 'line',
@@ -102,9 +103,9 @@ d3.csv(args).then(function (data) {
         data: {
             labels: labels,
             datasets: [{
-                data: gddData,
+                data: cum_gddData,
                 label: "Cumulative GDD",
-                borderColor: "#0f1f30",
+                borderColor: "#830306",
                 fill: false
             }]
         },
@@ -122,13 +123,20 @@ d3.csv(args).then(function (data) {
     });
 
     const ETc_mmChart = new Chart(document.getElementById("ETc_mmChart"), {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: labels,
-            datasets: [{
-                data: ETc_mmData,
+            datasets: [
+                {
+                data: ETc_mmData1,
                 label: "Evapotranspiration (mm)",
-                borderColor: "#c45850",
+                backgroundColor: "#c45850",
+                fill: false
+            },
+            {
+                data: ETc_mmData2,
+                label: "Evapotranspiration 2(mm)",
+                backgroundColor: "#0033dd",
                 fill: false
             }]
         },
@@ -137,13 +145,16 @@ d3.csv(args).then(function (data) {
                 y: {
                     title: {
                         display: true,
-                        text: 'Daily Evapotranspiration (mm)'
+                        text: 'Daily Evapotranspiration 2(mm)'
                     }
                 },
 
             }
         },
-    });
+        
+    },
+    );
+
     // Create the date range slider
     const slider = document.getElementById("slider");
     const dateRange = [labels[0], labels[labels.length - 1]];
@@ -151,11 +162,8 @@ d3.csv(args).then(function (data) {
         range: {
             min: new Date(dateRange[0]).getTime(),
             max: new Date(dateRange[1]).getTime()
-            // min: sliderBegin,
-            // max: sliderEnd
         },
         step: 24 * 60 * 60 * 1000, // One day in milliseconds
-        // tooltips: [true, true],
         connect: true,
         behaviour: 'drag',
         start: [new Date(dateRange[1]).getTime() - (21 * 86400000), new Date(dateRange[1]).getTime()] //Default view: with last 21 days of data. Checked if the entire datast is less then start location is just at the beginning of the slider.
@@ -179,7 +187,9 @@ d3.csv(args).then(function (data) {
         const filteredTmax_FData = filteredData.map(d => (d.Tmax_F === "") ? NaN : d.Tmax_F);
         const filteredTmin_FData = filteredData.map(d => (d.Tmin_F === "") ? NaN : d.Tmin_F);
         const filteredGDD_cumData = filteredData.map(d => (d.GDD_cum === "") ? NaN : d.GDD_cum);
-        const filteredETc_mmData = filteredData.map(d => (d.ETc_mm === "" || d.ETc_mm === "0.0") ? NaN : d.ETc_mm);
+        const filteredETc_mmData1 = filteredData.map(d => (d.ETc_mm === "" || d.ETc_mm === "0.0") ? NaN : d.ETc_mm);
+        const filteredETc_mmData2 = filteredData.map(d => (d.ETc_mm === "" || d.ETc_mm === "0.0") ? NaN : d.ETc_mm*0.75);
+
 
         // Update the chart data
         vpdmaxChart.data.labels = filteredLabels;
@@ -199,7 +209,8 @@ d3.csv(args).then(function (data) {
         gddChart.update();
 
         ETc_mmChart.data.labels = filteredLabels;
-        ETc_mmChart.data.datasets[0].data = filteredETc_mmData;
+        ETc_mmChart.data.datasets[0].data = filteredETc_mmData1;
+        ETc_mmChart.data.datasets[1].data = filteredETc_mmData2;
         ETc_mmChart.update();
     });
 });
