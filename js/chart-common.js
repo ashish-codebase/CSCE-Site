@@ -152,8 +152,7 @@ d3.csv(args).then(function (data) {
             }
         },
         
-    },
-    );
+    });
 
     // Create the date range slider
     const slider = document.getElementById("slider");
