@@ -13,8 +13,6 @@ d3.csv(args).then(function (data) {
     const labels = data.map(d => d.date);
     // const labels = lable_formatted;
     const vpdmaxData = data.map(d => d.VPDmax);
-    // console.log(vpdmaxData);
-    // console.log(labels);
 
     const tmaxData = data.map(d => d.Tmax_F);
     const tminData = data.map(d => d.Tmin_F);
@@ -46,7 +44,7 @@ d3.csv(args).then(function (data) {
                     }
                 },
 
-            }
+            },
         },
     });
 
@@ -141,6 +139,8 @@ d3.csv(args).then(function (data) {
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: true,
             scales: {
                 y: {
                     title: {
